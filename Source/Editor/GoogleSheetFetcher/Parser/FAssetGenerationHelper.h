@@ -4,11 +4,16 @@
 
 #include "IAssetTools.h"
 
-class STUDYSELF_API FAssetGenerationHelper
+#endif
+
+
+class STUDYSELFEDITOR_API FAssetGenerationHelper
 {
 public:
+	
 	/** * [단일 생성] 특정 경로에 에셋을 로드하거나 생성함 
 	 */
+#if WITH_EDITOR
 	static UPrimaryDataAsset* GetOrCreateAssetInternal(
 		const FString& PackagePath,
 		UClass* AssetClass,
@@ -26,6 +31,7 @@ public:
 		const FString& FolderPath, 
 		const FString& NameFormat, 
 		UClass* AssetClass);
+#endif
+	
 };
 
-#endif

@@ -15,11 +15,11 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSheetDataReceived, bool, bSuccess, const FString&, ResponseString);
 
 UCLASS(BlueprintType)
-class STUDYSELF_API UGoogleSheetFetcher : public UBlueprintFunctionLibrary
+class STUDYSELFEDITOR_API UGoogleSheetFetcher : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 public:
-	
+
 	// 블루프린트에서 호출할 비동기 함수
 	/**
 	 * @param SheetID  시트의 고유 ID
@@ -36,4 +36,6 @@ public:
 private:
 	// 실제 응답이 왔을 때 호출될 내부 콜백 함수
 	void OnProcessRequestComplete(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);
+
 };
+

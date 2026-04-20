@@ -11,11 +11,12 @@
  * 
  */
 UCLASS(Abstract, Blueprintable)
-class STUDYSELF_API UGoogleSheetParserBase : public UObject
+class STUDYSELFEDITOR_API UGoogleSheetParserBase : public UObject
 {
 	GENERATED_BODY()
 public:
 
+	
 	UFUNCTION(BlueprintCallable, Category = "GoogleSheet|Parser")
 	virtual void TSVDataParse(const FString& RawTSV) {}
 	
@@ -41,7 +42,8 @@ protected:
 	FString MakeAssetPath(const FString& FolderPath, const FString& NameFormat, int32 ID);
 
 protected:
+
 	// 파싱된 데이터를 클래스 내부에서만 들고 있음 (행-열 2차원 배열)
 	TArray<TArray<FString>> ParsedRows;
-
+	
 };

@@ -1,7 +1,5 @@
 ﻿#include "FAssetGenerationHelper.h"
 
-#if WITH_EDITOR 
-
 #include "AssetToolsModule.h"
 #include "IAssetTools.h"
 #include "UObject/SavePackage.h"
@@ -98,4 +96,3 @@ UPrimaryDataAsset* FAssetGenerationHelper::GetOrCreateAssetInternal(
     return TargetAsset;
 }
 
-#endif

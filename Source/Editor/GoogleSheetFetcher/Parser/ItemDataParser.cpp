@@ -3,8 +3,6 @@
 
 #include "ItemDataParser.h"
 
-#if WITH_EDITOR 
-
 #include "FAssetGenerationHelper.h"
 #include "Item/ItemDataStructure.h"
 
@@ -106,6 +104,3 @@ UItemDataAsset* UItemDataParser::SetupItemAsset(UPrimaryDataAsset* InAsset, int 
 
 	return ItemAsset;
 }
-
-
-#endif

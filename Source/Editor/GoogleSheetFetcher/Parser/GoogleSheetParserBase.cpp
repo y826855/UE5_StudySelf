@@ -3,8 +3,6 @@
 
 #include "GoogleSheetParserBase.h"
 
-#if WITH_EDITOR 
-
 void UGoogleSheetParserBase::BeginParse(const FString& RawTSV)
 {
 	ReleaseParsedData();
@@ -100,7 +98,3 @@ FString UGoogleSheetParserBase::MakeAssetPath(const FString& FolderPath, const F
 	FString FileName = FString::Format(*NameFormat, { ID });
 	return FPaths::Combine(*FolderPath, *FileName);
 }
-
-
-
-#endif

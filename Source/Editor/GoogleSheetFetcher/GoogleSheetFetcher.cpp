@@ -3,8 +3,6 @@
 
 #include "GoogleSheetFetcher.h"
 
-#if WITH_EDITOR 
-
 #include "HttpModule.h"
 #include "Interfaces/IHttpResponse.h"
 
@@ -37,7 +35,7 @@ void UGoogleSheetFetcher::FetchSheetDataByParts(FString SheetID, FString PageID,
     
 	Request->SetURL(TargetURL);
 	Request->SetVerb(TEXT("GET"));
-    
+	
 	UE_LOG(LogTemp, Log, TEXT("[HTTP] 조립된 URL로 요청 시작: %s"), *TargetURL);
 	Request->ProcessRequest();
 }
@@ -78,4 +76,3 @@ void UGoogleSheetFetcher::OnProcessRequestComplete(FHttpRequestPtr Request, FHtt
 	OnDataReceived.Broadcast(bSuccess, ResponseString);
 }
 
-#endif
