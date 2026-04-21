@@ -44,6 +44,8 @@ AStudySelfCharacter::AStudySelfCharacter()
 	GetCharacterMovement()->AirControl = 0.5f;
 }
 
+
+
 void AStudySelfCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {	
 	// Set up action bindings
@@ -64,6 +66,11 @@ void AStudySelfCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	{
 		UE_LOG(LogStudySelf, Error, TEXT("'%s' Failed to find an Enhanced Input Component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
 	}
+}
+
+bool AStudySelfCharacter::IsCrouching()
+{
+	return GetCharacterMovement()->IsCrouching();
 }
 
 
@@ -118,3 +125,4 @@ void AStudySelfCharacter::DoJumpEnd()
 	// pass StopJumping to the character
 	StopJumping();
 }
+

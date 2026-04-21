@@ -18,6 +18,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 /**
  *  A basic first person character
  */
+
 UCLASS(abstract)
 class AStudySelfCharacter : public ACharacter
 {
@@ -32,7 +33,7 @@ class AStudySelfCharacter : public ACharacter
 	UCameraComponent* FirstPersonCameraComponent;
 
 protected:
-
+	
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
 	UInputAction* JumpAction;
@@ -40,7 +41,7 @@ protected:
 	/** Move Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
 	UInputAction* MoveAction;
-
+	
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
 	class UInputAction* LookAction;
@@ -48,6 +49,7 @@ protected:
 	/** Mouse Look Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
 	class UInputAction* MouseLookAction;
+
 	
 public:
 	AStudySelfCharacter();
@@ -75,13 +77,15 @@ protected:
 	/** Handles jump end inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
-
+	
 protected:
 
 	/** Set up input action bindings */
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
-	
 
+	//커스텀 숙이기를 위한 crouch 값 얻어오는 함수
+	virtual bool IsCrouching();
+	
 public:
 
 	/** Returns the first person mesh **/

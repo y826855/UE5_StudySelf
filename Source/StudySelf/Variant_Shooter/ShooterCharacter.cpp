@@ -252,6 +252,7 @@ void AShooterCharacter::OnWeaponActivated(AShooterWeapon* Weapon)
 	OnBulletCountUpdated.Broadcast(Weapon->GetMagazineSize(), Weapon->GetBulletCount());
 
 	// set the character mesh AnimInstances
+	// 무기가 가지고 있는 전용 애니메이션 클래스를 가져와서 캐릭터 메쉬에 덮어씌움
 	GetFirstPersonMesh()->SetAnimInstanceClass(Weapon->GetFirstPersonAnimInstanceClass());
 	GetMesh()->SetAnimInstanceClass(Weapon->GetThirdPersonAnimInstanceClass());
 }
