@@ -88,7 +88,7 @@ public:
 public:
 
 	/** Constructor */
-	AShooterCharacter();
+	AShooterCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 protected:
 
